@@ -1,0 +1,22 @@
+.info-cart{
+    padding: 0px 5px;
+}
+.info-dark{
+    background: linear-gradient(to bottom right, #468bb3 , #46b383);
+}
+.info-primary{
+    background: linear-gradient(to bottom right, #468bb3 , #8b46b3);
+     
+}
+.icon-container{
+ height: 120px;
+ padding: 30px;
+ border-radius: 5px;
+}
+.info-icon{
+    font-size: 3em;
+    padding: 5px;
+   
+    
+
+}
