@@ -1,0 +1,36 @@
+.appointment-doctor{
+    height: 516px;
+    position:relative;
+    background-image: url('../../../images/chaire2.png');
+    background-size: cover;
+}
+.appointment-doctor::before{
+    height:100%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    background: #3A4256;
+    opacity: .7;
+  
+     
+}
+.appointment-doctor img{
+    height: 550px;
+    transform: translateY(-110px);
+    
+}
+.appointment-doctor .content{
+    transform: translateX(-20Px);
+   
+}
+
+.main-btn{
+     background:
+         linear-gradient(to bottom right, #468bb3 , #46b383);
+         width:150px;
+         color: white;  
+
+}
