@@ -1,8 +1,10 @@
 import React from 'react';
-import ApointMent from '../AppointMent/ApointMent';
-import Exseptional from '../Exsoptional/Exseptional';
 import Headers from '../Headers/Headers';
 import Services from '../Services/Services';
+import FeaturedService from '../FeaturedService/FeatureedService'
+import MakeAppointMent from '../MakeAppointMent/MakeApointMent'
+import Testimonals from '../Testimonals/Testimonals';
+import Blogs from '../Blogs/Blogs';
 
 
 
@@ -11,8 +13,10 @@ const Home = () => {
         <div>
            <Headers></Headers>
            <Services></Services>
-           <Exseptional></Exseptional>
-           <ApointMent></ApointMent>
+           <FeaturedService></FeaturedService>
+          <MakeAppointMent></MakeAppointMent>
+          <Testimonals></Testimonals>
+          <Blogs></Blogs>
         
         </div>
     );

@@ -1,0 +1,36 @@
+.make-appointment{
+    background-image: url(../../../images/chaire2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 420px;
+    
+  
+}
+
+.make-appointment::before{
+    content:  "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgb(36, 41, 73);
+    opacity: .8;
+    top: 0;
+    left: 0;
+}
+
+.make-appointment img{
+    height: 550px;
+    transform: translateY(-130px);
+}
+.main-btn{
+     background:
+         linear-gradient(to bottom right, #468bb3 , #46b383);
+         width:150px;
+         color: white;  
+
+}
+.appointment-contain{
+     transform: translateX(4px);
+}
