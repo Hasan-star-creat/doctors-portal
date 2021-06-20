@@ -1,9 +1,12 @@
-.header-container {
+.header-container, .Appoint-container {
     height:800px;
     position:relative;
     background-image: url('../../../images/chairShodow.png');
     background-size: cover;
     
+}
+.Appoint-container{
+    height: 500px;
 }
 .header-container::after {
     height:700px;
