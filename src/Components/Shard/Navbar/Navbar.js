@@ -8,22 +8,22 @@ const Navbar = () => {
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <Link to="/home" class="nav-link me-5 active" aria-current="page" href="#">
+                <Link to="/home" class="nav-link me-5 active" aria-current="page">
                   Home
                 </Link>
               </li>
               <li class="nav-item">
-                <Link class="nav-link me-5" href="#">
-                  About
+                <Link to="/login" class="nav-link me-5">
+                  Login
                 </Link>
               </li>
               <Link class="nav-item">
-                <a class="nav-link me-5" href="#">
+                <a class="nav-link me-5">
                  Dental service 
                 </a>
               </Link>
               <Link class="nav-item">
-                <a class="nav-link me-5" href="#">
+                <a class="nav-link me-5">
                   Reviews 
                 </a>
               </Link>
