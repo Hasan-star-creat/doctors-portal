@@ -5,11 +5,11 @@ import AppointmentForm from '../Appointment/AppointmentForm/AppointmentForm';
 const BookingCard = ({booking,date}) => {
     const [modalIsOpen, setIsOpen] = useState(false);
 
-    const openModal = () => {
+    function openModal(){
     setIsOpen(true);
     }
 
-    const closeModal = () => {
+    function closeModal(){
        setIsOpen(false)
     }
     return (

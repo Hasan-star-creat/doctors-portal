@@ -17,8 +17,32 @@ const customStyles = {
 Modal.setAppElement("#root");
 
 const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn, date }) => {
-   const { register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = data => console.log(data);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+
+    data.servic = appointmentOn;
+    data.create = new Date();
+    data.date = date
+    fetch("http://localhost:5050/addAppointment", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((success) => {
+        if (success) {
+          alert("appointment created successfully");
+          closeModal();
+        }
+      });
+     
+    
+  };
 
   return (
     <div>
@@ -29,29 +53,35 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn, date }) => {
         contentLabel="Example Modal"
       >
         <h2 className="text-primary">{appointmentOn}</h2>
+        <p>{date.toDateString()}</p>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <input type="time" {...register("time", { required: true })}  />
-          <br />
-          {errors.time && <span className="text-danger">Time is required</span>}
-          <br />
-          <input {...register("name", { required: true })} placeholder="Your Name" />
+          <input
+            {...register("name", { required: true })}
+            placeholder="Your Name"
+          />
           <br />
           {errors.name && <span className="text-danger">Name is required</span>}
           <br />
-          <input {...register("Phone", { required: true })} placeholder="Phone Number" />
+          <input
+            {...register("Phone", { required: true })}
+            placeholder="Phone Number"
+          />
           <br />
-          {errors.phone && <span className="text-danger">Phone is required</span>}
+          {errors.phone && (
+            <span className="text-danger">Phone is required</span>
+          )}
           <br />
-          <input {...register("email", { required: true })} placeholder="Email" />
+          <input
+            {...register("email", { required: true })}
+            placeholder="Email"
+          />
           <br />
-          {errors.email && <span className="text-danger">Email is required</span>}
-          <br />
-          <input type="date" {...register("date", { required: true })} placeholder="Date" />
-          <br />
-          {errors.date && <span className="text-danger">date is required</span>}
+          {errors.email && (
+            <span className="text-danger">Email is required</span>
+          )}
           <br />
 
-          <input type="submit" />
+          <input type="submit" className="btn main-btn" />
         </form>
       </Modal>
     </div>

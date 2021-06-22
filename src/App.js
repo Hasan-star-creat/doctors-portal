@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from './Components/Home/Home/Home';
 import Appointment from './Components/Appointment/Appointment/Appointment'
 import Login from './Components/Login/Login/Login';
+import Dhashbord from './Components/Dhashbord/Dhashbord/Dhashbord'
 
 export const UserContext = createContext();
 
@@ -21,8 +22,11 @@ const App = () => {
           <Route path="/appointment">
             <Appointment></Appointment>
           </Route>
+          <Route path="/dashbord/appointment">
+            <Dhashbord></Dhashbord>
+          </Route>
           <Route path="/login">
-          <Login></Login>
+            <Login></Login>
           </Route>
         </Switch>
       </Router>
