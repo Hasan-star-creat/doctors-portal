@@ -6,9 +6,9 @@ import Doctor from '../Doctor/Doctor';
 const Doctors = () => {
   const [isDoctors,setIsDoctors] = useState([])
      useEffect(() => {
-      fetch("http://localhost:5050/ourDoctor")
-        .then(res => res.json())
-        .then(data => setIsDoctors(data));
+      fetch("https://salty-temple-22791.herokuapp.com/doctors")
+        .then((res) => res.json())
+        .then((data) => setIsDoctors(data));
      }, [])
 
      console.log(isDoctors)

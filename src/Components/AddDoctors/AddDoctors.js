@@ -23,14 +23,14 @@ const AddDoctors = () => {
      formData.append('name', info.name);
      formData.append('email', info.email)
 
-    fetch("http://localhost:5050/addADoctor", {
+    fetch("https://salty-temple-22791.herokuapp.com/addADoctor", {
       method: "POST",
       body: formData,
     })
       .then((response) => response.json())
       .then((data) => {
-        if(data){
-          alert('doctors image insert')
+        if (data) {
+          alert("doctors image insert");
         }
         console.log(data);
       })
