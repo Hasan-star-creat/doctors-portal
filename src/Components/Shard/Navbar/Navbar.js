@@ -8,7 +8,11 @@ const Navbar = () => {
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <Link to="/home" class="nav-link me-5 active" aria-current="page">
+                <Link
+                  to="/home"
+                  class="nav-link me-5 active"
+                  aria-current="page"
+                >
                   Home
                 </Link>
               </li>
@@ -17,19 +21,17 @@ const Navbar = () => {
                   Login
                 </Link>
               </li>
+              <li class="nav-item">
+                <Link to="/dashboard" class="nav-link me-5">
+                  Dashbord
+                </Link>
+              </li>
               <Link class="nav-item">
-                <a class="nav-link me-5">
-                 Dental service 
-                </a>
-              </Link>
-              <Link class="nav-item">
-                <a class="nav-link me-5">
-                  Reviews 
-                </a>
+                <a class="nav-link me-5">Reviews</a>
               </Link>
               <li class="nav-item">
                 <a class="nav-link me-5 text-white" href="#">
-                 Blog
+                  Blog
                 </a>
               </li>
               <Link class="nav-item">

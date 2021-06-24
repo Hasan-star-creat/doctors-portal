@@ -1,24 +1,17 @@
 import React from 'react';
-import image from '../../../images/doctor.png';
+import { useState } from 'react';
+import { useEffect } from 'react';
 import Doctor from '../Doctor/Doctor';
 
 const Doctors = () => {
-    const doctors = [{
-        name:'Dr.Kaudi',
-        phone:'+61 4564973',
-        img: image,
-    },
-    {
-        name:'Dr.Kaudi',
-        phone:'+61 4564973',
-        img: image,
-    },
-    {
-        name:'Dr.Kaudi',
-        phone:'+61 4564973',
-        img: image,
-    }
-    ]
+  const [isDoctors,setIsDoctors] = useState([])
+     useEffect(() => {
+      fetch("http://localhost:5050/ourDoctor")
+        .then(res => res.json())
+        .then(data => setIsDoctors(data));
+     }, [])
+
+     console.log(isDoctors)
     return (
       <section className="doctors">
         <div className="container">
@@ -26,9 +19,9 @@ const Doctors = () => {
             <b> OUR DOCTORS</b>
           </p>
           <div className="row">
-            {doctors.map((doctor) => (
+            {isDoctors.map((doctor) => 
               <Doctor doctor={doctor}></Doctor>
-            ))}
+            )}
           </div>
         </div>
       </section>

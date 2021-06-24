@@ -3,7 +3,11 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from './Components/Home/Home/Home';
 import Appointment from './Components/Appointment/Appointment/Appointment'
 import Login from './Components/Login/Login/Login';
-import Dhashbord from './Components/Dhashbord/Dhashbord/Dhashbord'
+import Dashbord from "./Components/Dhashbord/Dhashbord/Dhashbord";
+
+import AddDoctors from "./Components/AddDoctors/AddDoctors";
+import PrivetRoute from './Components/Login/PrivetRoute/PrivetRoute'
+
 
 export const UserContext = createContext();
 
@@ -13,20 +17,23 @@ const App = () => {
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
         <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
           <Route path="/home">
             <Home />
           </Route>
           <Route path="/appointment">
             <Appointment></Appointment>
           </Route>
-          <Route path="/dashbord/appointment">
-            <Dhashbord></Dhashbord>
+          <PrivetRoute path="/dashboard">
+           <Dashbord></Dashbord> 
+          </PrivetRoute>
+          <Route path="/adddoctor">
+            <AddDoctors></AddDoctors>
           </Route>
           <Route path="/login">
             <Login></Login>
+          </Route>
+          <Route exact path="/">
+            <Home />
           </Route>
         </Switch>
       </Router>
